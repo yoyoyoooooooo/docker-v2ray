@@ -22,7 +22,7 @@ $ curl -fsSL https://get.docker.com -o get-docker.sh
 $ sudo sh get-docker.sh
 ```
 
-*　启动
+* 启动
 
 ```
 systemctl start docker
@@ -40,19 +40,19 @@ $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 4. 修改v2ray配置
 
-**`init-letsencrypt.sh`**
+**1) `init-letsencrypt.sh`**
 
 将里面的`domains`和`email`修改为自己的域名和邮箱。
 
-**`docker-compose.yml`**
+**2) `docker-compose.yml`**
 
 可以不用动。
 
-**`data/v2ray/config.json`**
+**3) `data/v2ray/config.json`**
 
 修改ID，`"id": "bae399d4-13a4-46a3-b144-4af2c0004c2e"`，也可以不修改。
 
-**`data/nginx/conf.d/v2020_v2ray.conf`**
+**4) `data/nginx/conf.d/v2020_v2ray.conf`**
 
 修改所有`your_domain`为自己的域名，其他地方，如果上面可以修改的地方你没修改，那么除了域名之外的也不用修改了。
 
