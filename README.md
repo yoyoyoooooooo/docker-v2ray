@@ -22,6 +22,12 @@ $ curl -fsSL https://get.docker.com -o get-docker.sh
 $ sudo sh get-docker.sh
 ```
 
+* 添加用户到用户组
+
+```
+sudo gpasswd -a $USER docker
+```
+
 * 启动
 
 ```
