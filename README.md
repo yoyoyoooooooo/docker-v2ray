@@ -12,6 +12,8 @@
 
 * 免费域名注册： <a href="https://www.freenom.com/zh/index.html?lang=zh" target="_blank">免费域名申请</a>；；
 * VPS推荐搬瓦工，支持支付宝付款： <a href="https://www.4spaces.org/best-details-to-buy-banwagonhost/" target="_blank">史上最详细搬瓦工VPS注册/购买图文教程(内附优惠券)</a>
+* 通过此【<a href="https://www.vultr.com/?ref=7365575" target="_blank" rel="noopener noreferrer">链接</a>】注册Vultr VPS，即可获得$100，目前搬瓦工缺货严重，如果搬瓦工没货推荐Vultr东京机房。
+
 
 2. 安装docker-ce并启动
 
@@ -46,7 +48,20 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
-4. 修改v2ray配置
+4. 安装git并clone代码
+
+```
+yum -y install git
+
+
+git clone https://github.com/aitlp/docker-v2ray.git
+```
+
+或者你可以下载后在上传到你的VPS。
+
+5. 修改v2ray配置
+
+进入`docker-v2ray`目录开始修改配置。
 
 **1) `init-letsencrypt.sh`**
 
@@ -64,7 +79,7 @@ $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 修改所有`your_domain`为自己的域名，其他地方，如果上面可以修改的地方你没修改，那么除了域名之外的也不用修改了。
 
-5. 一键部署v2ray
+6. 一键部署v2ray
 
 ```
 chomod +x ./init-letsencrypt.sh
@@ -72,6 +87,8 @@ chomod +x ./init-letsencrypt.sh
 sudo ./init-letsencrypt.sh
 ```
 
-6. 进行v2ray客户端配置
+7. 进行v2ray客户端配置
+
+现在你可以开始使用了。
 
 细节参考： <a href="https://www.4spaces.org/docker-compose-install-v2ray-ws-tls/" target="_blank" rel="noopener noreferrer">在docker-compose环境下以ws+tls方式搭建v2ray(So easy)</a>
