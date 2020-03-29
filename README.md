@@ -17,11 +17,13 @@
 
 2. 安装docker-ce并启动
 
+以下操作我都是以root用户进行的。
+
 * 安装
 
 ```
 $ curl -fsSL https://get.docker.com -o get-docker.sh
-$ sudo sh get-docker.sh
+$ sh get-docker.sh
 ```
 
 **注：** 这一步如果是CENTOS 8，可能会出现 `requires containerd.io >= 1.2.2-3错误` -> [解决办法](https://www.4spaces.org/docker-ce-install-containerd-io-error/)。
@@ -29,7 +31,7 @@ $ sudo sh get-docker.sh
 * 添加用户到用户组
 
 ```
-sudo gpasswd -a $USER docker
+gpasswd -a $USER docker
 ```
 
 * 启动
@@ -82,9 +84,9 @@ git clone https://github.com/aitlp/docker-v2ray.git
 6. 一键部署v2ray
 
 ```
-chomod +x ./init-letsencrypt.sh
+chmod +x ./init-letsencrypt.sh
 
-sudo ./init-letsencrypt.sh
+./init-letsencrypt.sh
 ```
 
 7. 进行v2ray客户端配置
