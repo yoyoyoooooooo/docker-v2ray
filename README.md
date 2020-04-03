@@ -12,7 +12,9 @@
 
 * 免费域名注册： <a href="https://www.freenom.com/zh/index.html?lang=zh" target="_blank">免费域名申请</a>；；
 * VPS推荐搬瓦工，支持支付宝付款： <a href="https://www.4spaces.org/best-details-to-buy-banwagonhost/" target="_blank">史上最详细搬瓦工VPS注册/购买图文教程(内附优惠券)</a>
-* 通过此【<a href="https://www.vultr.com/?ref=7365575" target="_blank" rel="noopener noreferrer">链接</a>】注册Vultr VPS，即可获得$100，目前搬瓦工缺货严重，如果搬瓦工没货推荐Vultr东京机房。
+* 搬瓦工： <a href="https://www.4spaces.org/bwg/static/promotion.html" target="_blank">当前促销方案</a>
+* 通过此【<a href="https://www.vultr.com/?ref=7365575" target="_blank" rel="noopener noreferrer">链接</a>】注册Vultr VPS，即可获得$100，推荐Vultr东京机房。
+
 
 
 2. 安装docker-ce并启动
