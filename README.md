@@ -94,7 +94,7 @@ git clone https://github.com/aitlp/docker-v2ray.git
 ```
 chmod +x ./init-letsencrypt.sh
 
-./init-letsencrypt.sh
+bash init-letsencrypt.sh
 ```
 
 7. 进行v2ray客户端配置
