@@ -28,6 +28,21 @@ if [ ! -e "$data_path/conf/options-ssl-nginx.conf" ] || [ ! -e "$data_path/conf/
 fi
 
 echo "### Creating dummy certificate for $domains ..."
+
+mv ./data/nginx/conf.d/v2ray.conf ./data/nginx/conf.d/v2ray.conf.bak
+
+touch ./data/nginx/conf.d/v2ray.conf
+echo "server{" >> ./data/nginx/conf.d/v2ray.conf
+echo "   listen 80;" >> ./data/nginx/conf.d/v2ray.conf
+echo "   server_name $domains;" >> ./data/nginx/conf.d/v2ray.conf
+echo "   location /.well-known/acme-challenge/ {" >> ./data/nginx/conf.d/v2ray.conf
+echo "     root /var/www/certbot;"  >> ./data/nginx/conf.d/v2ray.conf
+echo "   }"  >> ./data/nginx/conf.d/v2ray.conf
+echo "   location / { "  >> ./data/nginx/conf.d/v2ray.conf
+echo "       return 301 https://\$host\$request_uri;"  >> ./data/nginx/conf.d/v2ray.conf
+echo "   }"   >> ./data/nginx/conf.d/v2ray.conf
+echo "}" >> ./data/nginx/conf.d/v2ray.conf
+
 path="/etc/letsencrypt/live/$domains"
 mkdir -p "$data_path/conf/live/$domains"
 docker-compose run --rm --entrypoint "\
@@ -75,6 +90,9 @@ docker-compose run --rm --entrypoint "\
     --agree-tos \
     --force-renewal" certbot
 echo
+
+rm -f ./data/nginx/conf.d/v2ray.conf
+mv ./data/nginx/conf.d/v2ray.conf.bak ./data/nginx/conf.d/v2ray.conf
 
 echo "### Reloading nginx ..."
 docker-compose exec nginx nginx -s reload

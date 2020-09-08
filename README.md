@@ -13,8 +13,7 @@
 * 免费域名注册： <a href="https://www.freenom.com/zh/index.html?lang=zh" target="_blank">免费域名申请</a>；；
 * VPS推荐搬瓦工，支持支付宝付款： <a href="https://www.4spaces.org/best-details-to-buy-banwagonhost/" target="_blank">史上最详细搬瓦工VPS注册/购买图文教程(内附优惠券)</a>
 * 搬瓦工： <a href="https://www.4spaces.org/bwg/static/promotion.html" target="_blank">当前促销方案</a>
-* 通过此【<a href="https://www.vultr.com/?ref=7365575" target="_blank" rel="noopener noreferrer">链接</a>】注册Vultr VPS，即可获得$100，推荐Vultr东京机房。
-
+* 通过此【<a href="https://www.vultr.com/?ref=7365575" target="_blank" rel="noopener noreferrer">链接</a>】注册Vultr VPS，即可获得$100，推荐上新的 <a href="https://www.aliyunhost.net/vultr-korea-datacenter-launch/" target="_blank">Vultr韩国机房</a> 。
 
 
 2. 安装docker-ce并启动
@@ -30,7 +29,7 @@ $ sh get-docker.sh
 
 **注：** 这一步如果是CENTOS 8，可能会出现 `requires containerd.io >= 1.2.2-3错误` -> [解决办法](https://www.4spaces.org/docker-ce-install-containerd-io-error/)。
 
-* 添加用户到用户组
+* 添加用户到用户组(需退出当前会话重启登录才生效)
 
 ```
 gpasswd -a $USER docker
@@ -85,7 +84,7 @@ git clone https://github.com/aitlp/docker-v2ray.git
 
 修改ID，`"id": "bae399d4-13a4-46a3-b144-4af2c0004c2e"`，也可以不修改。
 
-**4) `data/nginx/conf.d/v2020_v2ray.conf`**
+**4) `data/nginx/conf.d/v2ray.conf`**
 
 修改所有`your_domain`为自己的域名，其他地方，如果上面可以修改的地方你没修改，那么除了域名之外的也不用修改了。
 
